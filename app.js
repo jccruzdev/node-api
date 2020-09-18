@@ -60,8 +60,13 @@ mongoose
   .connect(MONGO_URI)
   .then((result) => {
     console.log("Aplicacion iniciada");
+    const server = app.listen(8080);
+    const io = require("./socket").init(server);
+
+    io.on("connection", (socket) => {
+      console.log("Cliente conectado");
+    });
   })
   .catch((err) => {
     console.log(err);
   });
-app.listen(8080);

@@ -1,6 +1,6 @@
 ¿How Does Authentication Work?
 
-En la construccion de API's no de trabaja con sesiones, porque RESTFULL api's son 'stateless', no nos
+En la construccion de API's no se trabaja con sesiones, porque RESTFULL api's son 'stateless', no nos
 preocupamos por el cliente, ya que se intenta desacoplar al cliente-servidor de la manera mas estricta
 posible. Teniendo en cuenta como criterio de diseño que cada peticion debe ser manejada de forma indepe-
 ndiente. Eso significa que cada peticion debe tener la informacion suficiente para autenticarse en 

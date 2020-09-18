@@ -1,0 +1,26 @@
+1. ¿Como trabaja actualmente?
+Nuestras aplicaciones node/express trabajan en base a request-response
+Pero que pasa cuando algo ocurre en el server y queremos informar al client?
+
+2. Websockets en vez de HTTP
+
+HTTP es el protocolo usado hasta ahora. Los Websockets son establecidos mediante HTTP, a través de 
+un handshake establecido por los dos protocolos.
+En resumen el protocolo Websockets explica como la informacion es intercambiada.
+
+Ya no se tiene request-response, ahora se maneja 'push data' (Del server al client)
+
+Los protocolos HTTP y Websockets trabajan en conjunto dentro de una aplicacion.  
+
+3. Paquete Socket.io
+
+const io = require("socket.io")(server);  //Recibe un server como parametro
+
+io.on("connection",socket=>{...})  //Atiende las conexiones.
+
+io.emit("posts",{action:'create', post:post})  //Envia o Emite una conexion a todos los usuarios,
+su primer parametro es el nombre del canal (lo elige el programador), el segundo parámetro es la 
+información que se desea enviar por el canal.
+
+
+
